@@ -1,23 +1,20 @@
+def f(x):
+    return -(x - 5) ** 2 + 25
+
 def hill_climbing(start):
     current = start
-
     while True:
-        current_value = -(current - 5) ** 2 + 25
-        next_value = -(current + 1 - 5) ** 2 + 25
-
-        print("Current:", current, "Value:", current_value)
-
-        if next_value > current_value:
-            current = current + 1
+        print("Current:", current, "Value:", f(current))
+        right, left = f(current + 1), f(current - 1)
+        if right > f(current) and right >= left:
+            current += 1
+        elif left > f(current):
+            current -= 1
         else:
             break
-
     return current
 
-
 start = int(input("Enter starting value: "))
-
 result = hill_climbing(start)
-
 print("Best value:", result)
-print("Maximum value:", -(result - 5) ** 2 + 25)
+print("Maximum value:", f(result))
