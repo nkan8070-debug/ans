@@ -1,0 +1,31 @@
+class MyDate {
+    int dd, mm, yy;
+
+    MyDate() {
+        this.dd = 1;
+        this.mm = 1;
+        this.yy = 2000;
+    }
+
+    MyDate(int dd, int mm, int yy) {
+        this.dd = dd;
+        this.mm = mm;
+        this.yy = yy;
+    }
+
+    void display() {
+        System.out.println(this.dd + "-" + this.mm + "-" + this.yy);
+    }
+}
+
+public class Q9_MyDate {
+    public static void main(String[] args) {
+        MyDate d1 = new MyDate();
+        MyDate d2 = new MyDate(15, 8, 2024);
+
+        System.out.print("Default date: ");
+        d1.display();
+        System.out.print("Given date: ");
+        d2.display();
+    }
+}

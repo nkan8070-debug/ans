@@ -1,0 +1,28 @@
+import java.applet.Applet;
+import java.awt.Frame;
+import java.awt.Graphics;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+/* <applet code="Q1_MyApplet" width="300" height="200"></applet> */
+public class Q1_MyApplet extends Applet {
+
+    public void paint(Graphics g) {
+        g.drawString("Hello! This is my first Applet", 50, 100);
+    }
+
+    // This main method lets the applet run on new JDKs (no appletviewer needed)
+    public static void main(String[] args) {
+        Frame f = new Frame("My Applet");
+        Q1_MyApplet applet = new Q1_MyApplet();
+        f.add(applet);
+        f.setSize(300, 200);
+        f.setVisible(true);
+
+        f.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });
+    }
+}

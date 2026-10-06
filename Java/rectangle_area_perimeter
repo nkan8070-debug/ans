@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+class Rectangle {
+    double length, breadth;
+
+    Rectangle(double length, double breadth) {
+        this.length = length;
+        this.breadth = breadth;
+    }
+
+    double area() {
+        return length * breadth;
+    }
+
+    double perimeter() {
+        return 2 * (length + breadth);
+    }
+}
+
+public class Q5_Rectangle {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter length: ");
+        double l = sc.nextDouble();
+        System.out.print("Enter breadth: ");
+        double b = sc.nextDouble();
+
+        Rectangle r = new Rectangle(l, b);
+        System.out.println("Area = " + r.area());
+        System.out.println("Perimeter = " + r.perimeter());
+    }
+}
