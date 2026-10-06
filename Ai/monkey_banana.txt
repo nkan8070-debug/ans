@@ -1,0 +1,30 @@
+# Initial positions
+monkey = "door"
+box = "middle"
+banana = "ceiling"
+
+print("Monkey is at:", monkey)
+print("Box is at:", box)
+print("Banana is at:", banana)
+
+# Move monkey to the box
+monkey = "middle"
+print("Monkey moves to the box.")
+
+# Push the box below the banana
+if monkey == box:
+    box = "below banana"
+    monkey = "below banana"
+    print("Monkey pushes the box below the banana.")
+
+# Climb the box
+if monkey == box or box == "below banana":
+    monkey = "on box"
+    print("Monkey climbs on the box.")
+
+# Get the banana
+if monkey == "on box" and box == "below banana":
+    print("Monkey gets the banana!")
+    print("Goal State Achieved.")
+else:
+    print("Goal State Not Achieved.")

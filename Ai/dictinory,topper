@@ -1,0 +1,14 @@
+# Store student records in a dictionary
+students = {
+    "Rahul": 85,
+    "Amit": 92,
+    "Priya": 88,
+    "Neha": 95
+}
+
+# Find topper
+topper = max(students, key=students.get)
+
+# Display topper
+print("Topper:", topper)
+print("Percentage:", students[topper], "%")
